@@ -1,0 +1,188 @@
+% !TEX program = xelatex
+%
+% Adam Rahman's Resume Template
+%
+
+\documentclass[letterpaper, 11pt]{article}
+
+\usepackage{inputenc}
+\usepackage{fontspec}
+\usepackage[margin=1.125in]{geometry}
+\usepackage{titlesec}
+\usepackage{colortbl}
+\usepackage{titling}
+\usepackage{libertine}
+\usepackage{xifthen}
+\usepackage{hyperref}
+\usepackage{sqrcaps}
+\pagenumbering{gobble} % A quick hack to get rid of the page number 
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\author{Adam Rahman}
+
+% 
+% Title Command
+% Generates resume header
+%
+\renewcommand{\maketitle}{
+	\hspace{.125\textwidth}
+	\begin{minipage}[t]{.75\textwidth}
+    \begin{center}
+        \fontsize{18pt}{15pt}\selectfont\bfseries \theauthor \\
+        \fontsize{10pt}{15pt}\selectfont\sf
+        \href{mailto:mrahmanadam@gmail.com}{mrahmanadam@gmail.com} · (347) 593 7525 \\
+        Portfolio: \href{http://adamr.io}{adamr.io} · 
+        LinkedIn: \href{https://www.linkedin.com/in/adamsrahman/}{adamsrahman} · 
+        Github: \href{https://github.com/msradam}{msradam}  \\ 
+        \end{center}
+    \end{minipage}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+%
+% Defining separate entry commands for Education, Experience, Projects, and Skills
+%
+\newcommand{\eduentry}[4]{
+    \begin{minipage}[t]{.15\linewidth}
+    \hfill \textsc{#1}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}[t]{.80\linewidth}
+    {\bf\large#2}
+    \vspace{1pt}
+    \\\textit{#3} \small{#4}
+    \end{minipage}\\
+    \vspace{.2cm}
+    }
+
+% Experience Schema:
+% {start date} {end date} {company} {position} {description}
+\newcommand{\expentry}[5]{
+    \begin{minipage}[t]{.15\linewidth}
+    \hfill \textsc{#1} \\
+    \hfill \hspace*{5pt}\hfill --- \textsc{#2}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}[t]{.80\linewidth}
+    {\bf\large#3}
+    \\ #4 
+    \vspace{-1.5mm}
+    \small{#5}
+    \end{minipage}\\
+    \vspace{.2cm}
+    }
+
+
+\newcommand{\projectentry}[4]{
+    \begin{minipage}[t]{.15\linewidth}
+    \hfill \textsc{#1}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}[t]{.80\linewidth}
+    {\bf#2}
+    \\ #3 
+    \vspace{-1.5mm}
+    \small{#4}
+    \end{minipage}\\
+    \vspace{.2cm}
+    }
+
+
+\newcommand{\skillentry}[2]{
+    \begin{minipage}[t]{.15\linewidth}
+        \hfill \textsc{#1}
+        \end{minipage}
+        \hfill\vline\hfill
+        \begin{minipage}[t]{.80\linewidth}
+        #2
+        \end{minipage}\\
+    }
+
+
+% Title and line formatting
+\titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
+\titleformat{\section}{\large\bf\scshape\raggedright}{}{0.5em}{}[{\titlerule[0.75pt]}]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+\titleformat{\subsection}{\large\bfseries\centering}{}{0em}{\underline}%[\rule{3cm}{.2pt}]
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+\let\lineheight\baselineskip
+\setlength{\parindent}{0in}
+
+
+\begin{document}
+    \maketitle
+    \vspace{.5cm}
+
+
+    \section{education}
+    \eduentry{2016--2019}
+    {Wesleyan University}
+    {B.A. Computer Science, Theater; 3.5/4.0}
+    {\\ Patricelli Center Fellow; Deans' List}
+
+
+    \section{experience}
+    \expentry{Dec '18}
+    {Feb '19}
+    {UNICEF}
+    {Visiting Software Engineer | New York, NY}
+    {
+
+        \begin{itemize}{\leftmargin=0.5em \itemindent=0em}
+          \setlength\itemsep{0.1mm}
+          \item Implemented high-performance utilities for UNICEF's open-source MagicBox platform to \href{https://github.com/unicef/magicbox-download-roads}{retrieve road networks} for countries and \href{https://github.com/msradam/magicbox-site-routing}{compute distances} between large geospatial datasets 
+          \item Collaborated with UNICEF Innovation's development and data science teams via a Scrum framework
+          \item Deployed a \href{https://hub.docker.com/r/msradam/magicbox-tools}{Docker container} bundled with geospatial analysis tools for MagicBox developers and data scientists
+        \end{itemize}
+        
+    }
+
+    \expentry{Jun '18}
+    {Aug '18}
+    {Kurani Archiecture Firm}
+    {Software Engineering Intern | New York, NY}
+    {\begin{itemize}
+          \setlength\itemsep{0.1mm}
+          \item Prototyped IoT and AI integration in classrooms by designing dashboards to serve Raspberry Pi sensor data and IBM Watson Machine Learning APIs
+        \end{itemize}
+    }
+
+    \section{projects}
+
+        \projectentry{Jun '19}
+        {RESP - Psychological First-Aid for Natural Disasters}
+        {Backend Engineer}
+        {\begin{itemize}
+            \setlength\itemsep{0.1mm}
+            \item Designed a \href{https://github.com/msradam/resp}{RESTful API in Django} to serve a lightweight database and sentiment analysis output to a React app
+            \item Winner of the IBM Call for Code Challenge at AngelHack Manhattan
+          \end{itemize}
+        }
+
+        \projectentry{Nov '17}
+        {Carceral Contagion - Agent-Based Simulation of Mass Incarceration}
+        {Data Engineer}
+        {\begin{itemize}
+            \setlength\itemsep{0.1mm}
+            \item Developed a \href{https://github.com/msradam/carceral-contagion}{simulation of racial disparities} in prison sentencing in Python with the Mesa library, incorporating adjustable race and population size parameters
+            \item Winner of the Social Good \& 2nd Place Crowd Favorite awards at Wellesley Hacks
+          \end{itemize}
+        }
+
+
+    \section{skills}
+
+    \skillentry{languages}{Python, Javascript, Java, Haskell}
+    \skillentry{backend}{Django, Flask, MongoDB, PostgreSQL}
+    \skillentry{frontend}{Vue, HTML, CSS}
+    \skillentry{cloud}{Google Cloud Platform (GCP), Amazon Web Services (AWS), IBM Cloud}
+    \skillentry{misc.}{Docker, Git, Bash, LaTeX, Heroku, Scrum/Agile}
+    
+
+\end{document}
