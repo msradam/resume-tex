@@ -12,4 +12,8 @@ If the latter, make your necessary changes and enter:
 
 You will see the .pdf output in the same directory.
 
+## What I learned
+* Wrote macros to generate custom section layouts
+* Used XeLatex for additional handy features such as custom fonts
+
 
