@@ -1,4 +1,4 @@
-# Adam Rahman's LaTeX Resume Template
+# 🖋️ Adam's LaTeX Resume Template
 This is the source code for my current resume as of July 2019. 
 
 ![Adam's Resume](https://raw.githubusercontent.com/msradam/resume-tex/master/AdamRahman_Resume.png)
