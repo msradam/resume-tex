@@ -7,7 +7,7 @@
 
 \usepackage{inputenc}
 \usepackage{fontspec}
-\usepackage[margin=1.125in]{geometry}
+\usepackage[margin=1.1125in]{geometry}
 \usepackage{titlesec}
 \usepackage{colortbl}
 \usepackage{titling}
@@ -34,7 +34,7 @@
 	\hspace{.125\textwidth}
 	\begin{minipage}[t]{.75\textwidth}
     \begin{center}
-        \fontsize{18pt}{15pt}\selectfont\bfseries \theauthor \\
+        \fontsize{16pt}{15pt}\selectfont\bfseries \theauthor \\
         \fontsize{10pt}{15pt}\selectfont\sf
         \href{mailto:mrahmanadam@gmail.com}{mrahmanadam@gmail.com} · (347) 593 7525 \\
         Portfolio: \href{http://adamr.io}{adamr.io} · 
@@ -58,7 +58,7 @@
     \vspace{1pt}
     \\\textit{#3} \small{#4}
     \end{minipage}\\
-    \vspace{.2cm}
+    \vspace{.15cm}
     }
 
 % Experience Schema:
@@ -75,7 +75,7 @@
     \vspace{-1.5mm}
     \small{#5}
     \end{minipage}\\
-    \vspace{.2cm}
+    \vspace{.15cm}
     }
 
 
@@ -90,7 +90,7 @@
     \vspace{-1.5mm}
     \small{#4}
     \end{minipage}\\
-    \vspace{.2cm}
+    \vspace{.15cm}
     }
 
 
@@ -126,19 +126,18 @@
     {B.A. Computer Science, Theater; 3.5/4.0}
     {\\ Patricelli Center Fellow; Deans' List}
 
-
     \section{experience}
     \expentry{Dec '18}
     {Feb '19}
     {UNICEF}
-    {Visiting Software Engineer | New York, NY}
+    {Software Engineering Intern | New York, NY}
     {
 
         \begin{itemize}{\leftmargin=0.5em \itemindent=0em}
           \setlength\itemsep{0.1mm}
-          \item Implemented high-performance utilities for UNICEF's open-source MagicBox platform to \href{https://github.com/unicef/magicbox-download-roads}{retrieve road networks} for countries and \href{https://github.com/msradam/magicbox-site-routing}{compute distances} between large geospatial datasets 
+          \item Implemented high-performance utilities for UNICEF's open-source Magicbox platform to \href{https://github.com/unicef/magicbox-download-roads}{retrieve road networks} for countries and \href{https://github.com/msradam/magicbox-site-routing}{compute distances} between large geospatial datasets 
           \item Collaborated with UNICEF Innovation's development and data science teams via a Scrum framework
-          \item Deployed a \href{https://hub.docker.com/r/msradam/magicbox-tools}{Docker container} bundled with geospatial analysis tools for MagicBox developers and data scientists
+          \item Deployed a \href{https://hub.docker.com/r/msradam/magicbox-tools}{Docker container} bundled with geospatial analysis tools for Magicbox developers and data scientists
         \end{itemize}
         
     }
@@ -146,43 +145,48 @@
     \expentry{Jun '18}
     {Aug '18}
     {Kurani Archiecture Firm}
-    {Software Engineering Intern | New York, NY}
+    {Computer Science Intern | New York, NY}
     {\begin{itemize}
           \setlength\itemsep{0.1mm}
-          \item Prototyped IoT and AI integration in classrooms by designing dashboards to serve Raspberry Pi sensor data and IBM Watson Machine Learning APIs
+          \item Prototyped IoT and AI integration in classrooms by designing dashboards to serve Raspberry Pi sensor data and sentiment analysis predictions
         \end{itemize}
     }
 
     \section{projects}
 
+        \projectentry{Aug '19}
+        {Carceral Contagion - Agent-Based Mass Incarceration Model}
+        {Data Engineer | Python (iGraph), D3}
+        {\begin{itemize}
+            \setlength\itemsep{0.1mm}
+            \item Designed an \href{https://github.com/msradam/carceral-contagion}{agent-based simulation} of racial disparities in mass incarceration through a synthetic population network 
+            \item Implemented a browser visualization with WebSockets and D3.js
+          \end{itemize}
+        }
+
+        \projectentry{July '19}
+            {Magicbox Geospatial Routing API}
+            {Backend Engineer | Django, Docker}
+            {\begin{itemize}
+                \setlength\itemsep{0.1mm}
+                \item Developed and documented a \href{https://github.com/msradam/magicbox-routing-api}{API for Magicbox engineers} to run computations on large geospatial datasets and retrieve road networks
+            \end{itemize}
+            }
+
         \projectentry{Jun '19}
-        {RESP - Psychological First-Aid for Natural Disasters}
-        {Backend Engineer}
-        {\begin{itemize}
-            \setlength\itemsep{0.1mm}
-            \item Designed a \href{https://github.com/msradam/resp}{RESTful API in Django} to serve a lightweight database and sentiment analysis output to a React app
-            \item Winner of the IBM Call for Code Challenge at AngelHack Manhattan
-          \end{itemize}
-        }
+            {RESP - Psychological First-Aid for Natural Disasters}
+            {Backend Engineer | Django, React}
+            {\begin{itemize}
+                \setlength\itemsep{0.1mm}
+                \item Designed a \href{https://github.com/msradam/resp-api}{REST API} with check-in, status, and sentiment analysis functionality
+                \item Winner of the IBM Call for Code Challenge at AngelHack Manhattan
+            \end{itemize}
+            }
+            
+    \section{technical skills}
 
-        \projectentry{Nov '17}
-        {Carceral Contagion - Agent-Based Simulation of Mass Incarceration}
-        {Data Engineer}
-        {\begin{itemize}
-            \setlength\itemsep{0.1mm}
-            \item Developed a \href{https://github.com/msradam/carceral-contagion}{simulation of racial disparities} in prison sentencing in Python with the Mesa library, incorporating adjustable race and population size parameters
-            \item Winner of the Social Good \& 2nd Place Crowd Favorite awards at Wellesley Hacks
-          \end{itemize}
-        }
-
-
-    \section{skills}
-
-    \skillentry{languages}{Python, Javascript, Java, Haskell}
-    \skillentry{backend}{Django, Flask, MongoDB, PostgreSQL}
-    \skillentry{frontend}{Vue, HTML, CSS}
-    \skillentry{cloud}{Google Cloud Platform (GCP), Amazon Web Services (AWS), IBM Cloud}
-    \skillentry{misc.}{Docker, Git, Bash, LaTeX, Heroku, Scrum/Agile}
-    
-
+    \skillentry{languages}{Python, JavaScript(ES6+), HTML5, CSS3 }
+    \skillentry{concepts}{RESTful API Design/Integration, MVC Architecture, Agile}
+    \skillentry{tools}{Git, Docker, Heroku, Google Cloud Platform }
+    \skillentry{frameworks}{Django, Flask, Node.js + Express, Vue.js, React}
 \end{document}
