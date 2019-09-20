@@ -3,11 +3,11 @@
 % Adam Rahman's Resume Template
 %
 
-\documentclass[letterpaper, 10.5pt]{article}
+\documentclass[letterpaper, 11pt]{article}
 
 \usepackage{inputenc}
 \usepackage{fontspec}
-\usepackage[margin=0.375in]{geometry}
+\usepackage[margin=0.5in]{geometry}
 \usepackage{titlesec}
 \usepackage{colortbl}
 \usepackage{titling}
@@ -47,7 +47,7 @@
 	\hspace{.125\textwidth}
 	\begin{minipage}[t]{.75\textwidth}
     \begin{center}
-        \fontsize{16pt}{15pt}\selectfont\bfseries \theauthor \\
+        \fontsize{15pt}{15pt}\selectfont\bfseries \theauthor \\
         \fontsize{10pt}{15pt}\selectfont\sf
         \href{mailto:mrahmanadam@gmail.com}{mrahmanadam@gmail.com} · (347) 593 7525 \\
         Portfolio: \href{http://adamr.io}{adamr.io} · 
@@ -63,49 +63,88 @@
 % Defining separate entry commands for Education, Experience, Projects, and Skills
 %
 \newcommand{\eduentry}[4]{
-    \begin{minipage}[t]{.15\linewidth}
-    \hfill \textsc{#1}
-    \end{minipage}
-    \hfill\vline\hfill
+    \begin{center}
+        \begin{minipage}[b]{0.33333\textwidth}
+        \raggedright
+        \bf\large Middletown, CT
+        \end{minipage}%
+        \begin{minipage}[b]{0.33333\textwidth}
+        \centering
+        \bf\large#2
+        \end{minipage}%
+        \begin{minipage}[b]{0.33333\textwidth}
+        \raggedleft
+        \bf\large Sep. 2016 -- May 2019
+        \end{minipage}
+    \end{center}
+    % \begin{minipage}[t]{.15\linewidth}
+    % \hfill \textsc{#1}
+    % \end{minipage}
+    % \hfill\vline\hfill
     \begin{minipage}[t]{.80\linewidth}
-    {\bf\large#2}
-    \vspace{1pt}
-    \\\textit{#3} \small{#4}
+    \vspace{-5mm}
+    \textit{#3} \small{#4}
     \end{minipage}\\
-    \vspace{.10cm}
+    \vspace{2mm}
     }
 
 % Experience Schema:
 % {start date} {end date} {company} {position} {description}
 \newcommand{\expentry}[5]{
-    \begin{minipage}[t]{.15\linewidth}
-    \hfill \textsc{#1} \\
-    \hfill \hspace*{5pt}\hfill --- \textsc{#2}
-    \end{minipage}
-    \hfill\vline\hfill
-    \begin{minipage}[t]{.80\linewidth}
-    {\bf\large#3}
-    \\ #4 
-    \vspace{-1.5mm}
+    \begin{center}
+        \begin{minipage}[b]{0.33333\textwidth}
+        \raggedright
+        \bf\large #4
+        \end{minipage}%
+        \begin{minipage}[b]{0.33333\textwidth}
+        \centering
+        \bf\large#3
+        \end{minipage}%
+        \begin{minipage}[b]{0.33333\textwidth}
+        \raggedleft
+        \bf\large {#1} -- {#2}
+        \end{minipage}
+    \end{center}
+    % \begin{minipage}[t]{.15\linewidth}
+    % \hfill \textsc{#1} \\
+    % \hfill \hspace*{5pt}\hfill --- \textsc{#2}
+    % \end{minipage}
+    % \hfill\vline\hfill
+    \begin{minipage}[t]{\linewidth}
+    \vspace{-6mm}
     \small{#5}
     \end{minipage}\\
-    \vspace{.10cm}
+    \vspace{1mm}
     }
 
-
-\newcommand{\projectentry}[4]{
-    \begin{minipage}[t]{.15\linewidth}
-    \hfill \textsc{#1}
-    \end{minipage}
-    \hfill\vline\hfill
-    \begin{minipage}[t]{.80\linewidth}
-    {\bf#2}
-    \\ #3 
-    \vspace{-1.0mm}
+ \newcommand{\projectentry}[4]{
+    \begin{center}
+        \begin{minipage}[b]{0.33333\textwidth}
+        \raggedright
+        \bf #3
+        \end{minipage}%
+        \begin{minipage}[b]{0.33333\textwidth}
+        \centering
+        \bf #2
+        \end{minipage}%
+        \begin{minipage}[b]{0.33333\textwidth}
+        \raggedleft
+        \bf #1
+        \end{minipage}
+    \end{center}
+    % \begin{minipage}[t]{.15\linewidth}
+    % \hfill \textsc{#1} \\
+    % \hfill \hspace*{5pt}\hfill --- \textsc{#2}
+    % \end{minipage}
+    % \hfill\vline\hfill
+    \begin{minipage}[t]{\linewidth}
+    \vspace{-6mm}
     \small{#4}
     \end{minipage}\\
-    \vspace{.10cm}
+    \vspace{1mm}
     }
+
+
 
     \newcommand{\awardentry}[4]{
         \begin{minipage}[t]{.15\linewidth}
@@ -136,7 +175,7 @@
 
 % Title and line formatting
 \titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
-\titleformat{\section}{\large\scshape\bfseries\raggedright}{}{0.5em}{}[{\titlerule[0.75pt]}]
+\titleformat{\section}{\large\scshape\bfseries\raggedright}{}{0.0em}{}[{\titlerule[0.75pt]}]
 \titlespacing{\section}{0pt}{3pt}{7pt}
 \titleformat{\subsection}{\large\bfseries\centering}{}{0em}{\underline}%[\rule{3cm}{.2pt}]
 \titlespacing{\subsection}{0pt}{7pt}{7pt}
@@ -159,10 +198,10 @@
     \expentry{Sep '19}
     {Nov '19}
     {Buildly}
-    {Software Engineering Intern | New York, NY (Remote)}
+    {Backend Developer Intern}
     {
 
-        \begin{itemize}{\leftmargin=0.5em \itemindent=0em}
+        \begin{itemize}
           \setlength\itemsep{0.1mm}
           \item Debugged and tested features for the Buildly product backend, including the management of multiple endpoints and connecting multiple databases
           \item Maintained and executed unit and integration tests for the product core 
@@ -173,7 +212,7 @@
     \expentry{Dec '18}
     {Feb '19}
     {UNICEF}
-    {Software Engineering Intern | New York, NY}
+    {Software Engineer Intern}
     {
 
         \begin{itemize}{\leftmargin=0.5em \itemindent=0em}
@@ -187,18 +226,19 @@
 
     \expentry{Jun '18}
     {Aug '18}
-    {Kurani Architecture Firm}
-    {Computer Science Intern | New York, NY}
+    {Kurani}
+    {Computer Science Intern}
     {\begin{itemize}
           \setlength\itemsep{0.1mm}
           \item Integrated Raspberry Pi sensor data and IBM Watson Machine Learning predictions in prototype IoT dashboards
+          \item Pitched to and collaborated with CEO on IoT implementation in learning space architecture 
         \end{itemize}
     }
 
     \expentry{Sep '17}
     {Feb '19}
     {Wesleyan Local Co-Op}
-    {Programmer | Middletown, CT}
+    {Programmer}
     {\begin{itemize}
           \setlength\itemsep{0.1mm}
           \item Implemented web and command-line utilities to retrieve Qualtrics survey data, compute share prices for participants, and output a spreadsheet for co-op coordinators to determine total shares and money owed per-person
@@ -209,7 +249,7 @@
 
         \projectentry{July '19}
             {Magicbox Geospatial Routing API}
-            {Django, Docker, PostgreSQL | \href{https://magicbox-routing.herokuapp.com}{magicbox-routing.herokuapp.com}}
+            {Django, Docker, PostgreSQL}
             {\begin{itemize}
                 \setlength\itemsep{0.1mm}
                 \item Implemented a geospatial computation microservice for UNICEF's Magicbox platform, incorporating the utilities developed during the internship period
@@ -219,8 +259,8 @@
             }
 
         \projectentry{Jun '19}
-            {RESP - Psychological First-Aid for Natural Disasters}
-            {Node, Express, MongoDB, React | \href{https://resp-angelhack.herokuapp.com}{resp-angelhack.herokuapp.com}}
+            {RESP}
+            {Node, Express, React, MongoDB}
             {\begin{itemize}
                 \setlength\itemsep{0.1mm}
                 \item Implemented a REST API to check-in natural disaster survivors, store them in a database, and query nearby health facilities with the Healthsites.io API
@@ -238,15 +278,4 @@
     \skillentry{data}{PostgreSQL, GraphQL, MongoDB}
     \skillentry{testing}{Unit, Integration, End-to-End}
 
-
-    \section{awards}
-    \projectentry{Aug '19}
-    {IBM Call for Code Challenge Winner}
-    {AngelHack Manahttan}
-    {    }
-
-    \projectentry{Nov '17}
-    {Social Good Award}
-    {Wellesley Hacks}
-    {    }
 \end{document}
