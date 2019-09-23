@@ -49,7 +49,9 @@
     \begin{center}
         \fontsize{15pt}{15pt}\selectfont\bfseries \theauthor \\
         \fontsize{10pt}{15pt}\selectfont\sf
+        \vspace{-0.5mm}
         \href{mailto:mrahmanadam@gmail.com}{mrahmanadam@gmail.com} · (347) 593 7525 \\
+        \vspace{-0.5mm}
         Portfolio: \href{http://adamr.io}{adamr.io} · 
         LinkedIn: \href{https://www.linkedin.com/in/adamsrahman/}{adamsrahman} · 
         Github: \href{https://github.com/msradam}{msradam}  \\ 
@@ -63,82 +65,73 @@
 % Defining separate entry commands for Education, Experience, Projects, and Skills
 %
 \newcommand{\eduentry}[4]{
-    \begin{center}
-        \begin{minipage}[b]{0.33333\textwidth}
+        \begin{minipage}[b]{0.5\textwidth}
         \raggedright
-        \bf\large Middletown, CT
+        \bf\large #2
         \end{minipage}%
-        \begin{minipage}[b]{0.33333\textwidth}
-        \centering
-        \bf\large#2
-        \end{minipage}%
-        \begin{minipage}[b]{0.33333\textwidth}
+        \begin{minipage}[b]{0.5\textwidth}
         \raggedleft
-        \bf\large Sep. 2016 -- May 2019
+        \bf #1
         \end{minipage}
-    \end{center}
+
     % \begin{minipage}[t]{.15\linewidth}
     % \hfill \textsc{#1}
     % \end{minipage}
     % \hfill\vline\hfill
     \begin{minipage}[t]{.80\linewidth}
-    \vspace{-5mm}
+    \vspace{-3mm}
     \textit{#3} \small{#4}
     \end{minipage}\\
-    \vspace{2mm}
+    \vspace{1mm}
     }
 
 % Experience Schema:
 % {start date} {end date} {company} {position} {description}
 \newcommand{\expentry}[5]{
-    \begin{center}
-        \begin{minipage}[b]{0.33333\textwidth}
+
+    \begin{minipage}[b]{0.5\textwidth}
         \raggedright
-        \bf\large #4
+        \bf\large #3
         \end{minipage}%
-        \begin{minipage}[b]{0.33333\textwidth}
-        \centering
-        \bf\large#3
-        \end{minipage}%
-        \begin{minipage}[b]{0.33333\textwidth}
+        \begin{minipage}[b]{0.5\textwidth}
         \raggedleft
-        \bf\large {#1} -- {#2}
+        \bf {#1} -- {#2}
         \end{minipage}
-    \end{center}
+
     % \begin{minipage}[t]{.15\linewidth}
     % \hfill \textsc{#1} \\
     % \hfill \hspace*{5pt}\hfill --- \textsc{#2}
     % \end{minipage}
     % \hfill\vline\hfill
     \begin{minipage}[t]{\linewidth}
-    \vspace{-6mm}
+    \vspace{-3mm}
+    #4
+    \vspace{-2.5mm}
     \small{#5}
     \end{minipage}\\
     \vspace{1mm}
     }
 
  \newcommand{\projectentry}[4]{
-    \begin{center}
-        \begin{minipage}[b]{0.33333\textwidth}
+
+    \begin{minipage}[b]{0.5\textwidth}
         \raggedright
-        \bf #3
-        \end{minipage}%
-        \begin{minipage}[b]{0.33333\textwidth}
-        \centering
         \bf #2
         \end{minipage}%
-        \begin{minipage}[b]{0.33333\textwidth}
+        \begin{minipage}[b]{0.5\textwidth}
         \raggedleft
         \bf #1
         \end{minipage}
-    \end{center}
+
     % \begin{minipage}[t]{.15\linewidth}
     % \hfill \textsc{#1} \\
     % \hfill \hspace*{5pt}\hfill --- \textsc{#2}
     % \end{minipage}
     % \hfill\vline\hfill
     \begin{minipage}[t]{\linewidth}
-    \vspace{-6mm}
+    \vspace{-3mm}
+    \small #3
+    \vspace{-2.5mm}
     \small{#4}
     \end{minipage}\\
     \vspace{1mm}
@@ -168,7 +161,7 @@
         \end{minipage}
         \hfill\vline\hfill
         \begin{minipage}[t]{.80\linewidth}
-        #2
+        \small{#2}
         \end{minipage}\\
     }
 
@@ -185,22 +178,21 @@
 
 \begin{document}
     \maketitle
-    \vspace{.10cm}
+    \vspace{.075cm}
 
 
     \section{education}
-    \eduentry{2016--2019}
+    \eduentry{Sept. 2016 -- May 2019}
     {Wesleyan University}
     {B.A. Computer Science, Theater; 3.5/4.0}
-    {\\ Patricelli Center Fellow; Deans' List}
+    {\\ Graduated May 2019; Patricelli Center Fellow; Deans' List}
 
     \section{experience}
-    \expentry{Sep '19}
-    {Nov '19}
+    \expentry{Sep 2019}
+    {Nov 2019}
     {Buildly}
     {Backend Developer Intern}
     {
-
         \begin{itemize}
           \setlength\itemsep{0.1mm}
           \item Debugged and tested features for the Buildly product backend, including the management of multiple endpoints and connecting multiple databases
@@ -209,8 +201,8 @@
         
     }
 
-    \expentry{Dec '18}
-    {Feb '19}
+    \expentry{Dec 2018}
+    {Feb 2019}
     {UNICEF}
     {Software Engineer Intern}
     {
@@ -224,8 +216,8 @@
         
     }
 
-    \expentry{Jun '18}
-    {Aug '18}
+    \expentry{June 2018}
+    {August 2018}
     {Kurani}
     {Computer Science Intern}
     {\begin{itemize}
@@ -235,8 +227,8 @@
         \end{itemize}
     }
 
-    \expentry{Sep '17}
-    {Feb '19}
+    \expentry{Sept. 2017}
+    {Feb. 2019}
     {Wesleyan Local Co-Op}
     {Programmer}
     {\begin{itemize}
@@ -247,23 +239,22 @@
 
     \section{projects}
 
-        \projectentry{July '19}
+        \projectentry{July 2019}
             {Magicbox Geospatial Routing API}
-            {Django, Docker, PostgreSQL}
+            {Django, Docker, React, PostgreSQL}
             {\begin{itemize}
                 \setlength\itemsep{0.1mm}
                 \item Implemented a geospatial computation microservice for UNICEF's Magicbox platform, incorporating the utilities developed during the internship period
                 \item Designed a frontend to upload datasets and view road network visualizations with React and kepler.gl
-                \item Provisioned the microservice as a Docker container for streamlined deployment
             \end{itemize}
             }
 
-        \projectentry{Jun '19}
+        \projectentry{June 2019}
             {RESP}
             {Node, Express, React, MongoDB}
             {\begin{itemize}
                 \setlength\itemsep{0.1mm}
-                \item Implemented a REST API to check-in natural disaster survivors, store them in a database, and query nearby health facilities with the Healthsites.io API
+                \item Implemented a REST API to check-in natural disaster survivors, store them in a database, and query nearby health facilities with the Healthsites.io API, deployed at \href{http://resp-angelhack.herokuapp.com}{resp-angelhack.herokuapp.com}
                 \item Designed a frontend  to display checked-in survivors and local health facilities
                 \item Winner of the IBM Call for Code Challenge at AngelHack Manhattan
             \end{itemize}
@@ -271,9 +262,9 @@
             
     \section{technical skills}
 
-    \skillentry{languages}{Python, JavaScript(ES6+), Java, HTML5, CSS3, Bash}
+    \skillentry{languages}{Python, JavaScript (ES6+), Java, HTML5, CSS3, Bash}
     \skillentry{concepts}{RESTful API Design/Integration, MVC Architecture, Agile}
-    \skillentry{frameworks}{Django, Flask, Express, React, Jest}
+    \skillentry{frameworks}{Django, Flask, Express, React, Jest, Robot}
     \skillentry{tools}{Git, Docker, Heroku, Google Cloud Platform (GCP), Amazon Web Services (AWS) }
     \skillentry{data}{PostgreSQL, GraphQL, MongoDB}
     \skillentry{testing}{Unit, Integration, End-to-End}
