@@ -1,0 +1,349 @@
+% !TEX program = xelatex
+%
+% Adam Rahman's Resume Template
+%
+
+\documentclass[letterpaper, 11pt]{article}
+
+\usepackage{inputenc}
+\usepackage{fontspec}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{colortbl}
+\usepackage{titling}
+\usepackage[rm]{roboto}
+% \usepackage{libertine}
+% \usepackage[sfdefault]{equity}
+\usepackage{xifthen}
+\usepackage{hyperref}
+\usepackage{sqrcaps}
+\pagenumbering{gobble} % A quick hack to get rid of the page number 
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\author{Adam M. Rahman}
+
+% 
+% Title Command
+% Generates resume header
+%
+% \renewcommand{\maketitle}{
+% 	\hspace{.125\textwidth}
+% 	\begin{minipage}[t]{.75\textwidth}
+%     \begin{center}
+%         \fontsize{16pt}{15pt}\selectfont\bfseries \theauthor \\
+%         \fontsize{10pt}{15pt}\selectfont\sf
+%         \href{mailto:munawaradamr@gmail.com}{munawaradamr@gmail.com} · (347) 593 7525 \\
+%         Portfolio: \href{http://adamr.io}{adamr.io} · 
+%         LinkedIn: \href{https://www.linkedin.com/in/adamsrahman/}{adamsrahman} · 
+%         Github: \href{https://github.com/msradam}{msradam}  \\ 
+%         \end{center}
+%     \end{minipage}}
+
+\renewcommand{\maketitle}{
+	\hspace{.125\textwidth}
+	\begin{minipage}[t]{.75\textwidth}
+    \begin{center}
+        \fontsize{15pt}{15pt}\selectfont\bfseries \theauthor \\
+        \fontsize{10pt}{15pt}\selectfont\normalfont
+        \vspace{-0.5mm}
+        \href{mailto:munawaradamr@gmail.com}{msrahmanadam@gmail.com} · (347) 593 7525 \\
+        \vspace{-0.5mm}
+        Portfolio: \href{https://adamr.io}{adamr.io} · 
+        LinkedIn: \href{https://www.linkedin.com/in/adamsrahman/}{adamsrahman} · 
+        GitHub: \href{https://github.com/msradam}{msradam}  \\ 
+        \end{center}
+    \end{minipage}}
+
+
+% \renewcommand{\familydefault}{\sfdefault}
+
+%
+% Defining separate entry commands for Education, Experience, Projects, and Skills
+%
+\newcommand{\eduentry}[4]{
+        \begin{minipage}[b]{0.5\textwidth}
+        \raggedright
+        \bf\large #2
+        \end{minipage}%
+        \begin{minipage}[b]{0.5\textwidth}
+        \raggedleft
+        \bf #1
+        \end{minipage}
+
+    % \begin{minipage}[t]{.15\linewidth}
+    % \hfill \textsc{#1}
+    % \end{minipage}
+    % \hfill\vline\hfill
+    \begin{minipage}[t]{.80\linewidth}
+    \vspace{-3mm}
+    \textit{#3} \small{#4}
+    \end{minipage}\\
+    \vspace{1mm}
+    }
+
+% Experience Schema:
+% {start date} {end date} {company} {position} {description}
+\newcommand{\expentry}[5]{
+
+    \begin{minipage}[b]{0.5\textwidth}
+        \raggedright
+        \bf\large #3
+        \end{minipage}%
+        \begin{minipage}[b]{0.5\textwidth}
+        \raggedleft
+        \bf {#1} -- {#2}
+        \end{minipage}
+
+    % \begin{minipage}[t]{.15\linewidth}
+    % \hfill \textsc{#1} \\
+    % \hfill \hspace*{5pt}\hfill --- \textsc{#2}
+    % \end{minipage}
+    % \hfill\vline\hfill
+    \begin{minipage}[t]{\linewidth}
+    \vspace{-3mm}
+    #4
+    \vspace{-1.75mm}
+    \small{#5}
+    \end{minipage}\\
+    \vspace{1mm}
+    }
+
+ \newcommand{\projectentry}[4]{
+
+    \begin{minipage}[b]{0.5\textwidth}
+        \raggedright
+        \bf #2
+        \end{minipage}%
+        \begin{minipage}[b]{0.5\textwidth}
+        \raggedleft
+        \bf #1
+        \end{minipage}
+
+    % \begin{minipage}[t]{.15\linewidth}
+    % \hfill \textsc{#1} \\
+    % \hfill \hspace*{5pt}\hfill --- \textsc{#2}
+    % \end{minipage}
+    % \hfill\vline\hfill
+    \begin{minipage}[t]{\linewidth}
+    \vspace{-3mm}
+    \small #3
+    \vspace{-1.75mm}
+    \small{#4}
+    \end{minipage}\\
+    \vspace{1mm}
+    }
+
+
+
+    \newcommand{\awardentry}[4]{
+        \begin{minipage}[t]{.15\linewidth}
+        \hfill \textsc{#1}
+        \end{minipage}
+        \hfill\vline\hfill
+        \begin{minipage}[t]{.80\linewidth}
+        {\bf#2}
+        \\ #3 
+        \vspace{-1.5mm}
+        \small{#4}
+        \end{minipage}\\
+        \vspace{.10cm}
+        }           
+    
+
+
+\newcommand{\skillentry}[2]{
+    \begin{minipage}[t]{.15\linewidth}
+        \hfill \textsc{#1}
+        \end{minipage}
+        \hfill\vline\hfill
+        \begin{minipage}[t]{.80\linewidth}
+        \small{#2}
+        \end{minipage}\\
+    }
+
+
+% Title and line formatting
+\titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
+\titleformat{\section}{\scshape\bfseries\raggedright}{}{0.0em}{}[{\titlerule[0.75pt]}]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+\titleformat{\subsection}{\large\bfseries\centering}{}{0em}{\underline}%[\rule{3cm}{.2pt}]
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+\let\lineheight\baselineskip
+\setlength{\parindent}{0in}
+
+
+\begin{document}
+    \maketitle
+    \vspace{.075cm}
+
+
+    \section{education}
+    \eduentry{Sept. 2016 -- May 2019}
+    {Wesleyan University}
+    {B.A. Computer Science, Theater; 3.36/4.0}
+    {\\ Graduated May 2019; Patricelli Center Fellow; Deans' List Spring 2017\\
+    \textbf{Relevant Coursework:} Algorithms \& Complexity, Computer Networks, Design of \\ Programming Languages, Randomized Algorithms, Proseminar in Audiovisual\\Machine Learning, Patricelli Center Fellowship}
+
+    \eduentry{Sept. 2012 -- May 2016}
+    {Stuyvesant High School}
+    {High School Diploma; 94/100}
+    {\\ Graduated June 2016; Highest Honors in Latin; Varsity Lincoln-Douglas Debate}
+
+    \section{work experience}
+    \expentry{July 2020}
+    {Present}
+    {IBM}
+    {Staff Software Engineer}
+    {
+        \begin{itemize}
+          \setlength\itemsep{-0.5mm}
+            \item Develops, executes, and maintains continuous integration and regression tests
+            for IBM Z mainframe software components, including Docker containers running via IBM z/OS Container
+            Extensions (zCX), IBM zCX Foundation for Red Hat OpenShift,  and z/OS Management Facility RESTful APIs
+            \item Conducts infrastructure orchestration for Continuous Integration test automation with Ansible and Jenkins to run
+            health checks, load/stress tests, customer workloads across a series of on-premise mainframe test hardware and IBM Wazi as a Service virtual machines on IBM Cloud
+            \item Develops and ports test utilities with Metal C, z/OS High Level Assembler, and Golang to exploit z/OS services for testing and run open-source tools like Grafana k6 natively
+            \item Conducts daily monitoring and maintenance of mainframe test systems,
+            including mounting filesystems, installing products including Conda, Nodejs,
+            and OpenShift, and troubleshooting system dumps and traces in coordination
+            with other developers and testers
+        \end{itemize}
+        
+    }
+
+    
+    \expentry{Sept. 2019}
+    {Nov. 2019}
+    {Buildly}
+    {Software Developer, Intern}
+    {
+        \begin{itemize}
+          \setlength\itemsep{-0.5mm}
+          \item Implemented bugfixes, wrote unit tests, and refactored features for Buildly's Django backend in order to connect multiple microservices to a single endpoint, manage multiple databases, and incorporate self-documenting API specifications with Swagger UI
+          \item Maintained end-to-end test suite for Buildy's frontend and backend with the Robot framework
+          \item Communicated with CEO and CTO daily about product roadmap and development guidelines
+        \end{itemize}
+        
+    }
+
+    \expentry{Sept. 2019}
+    {Nov. 2019}
+    {Kite.com}
+    {Python Code Curator}
+    {
+        \begin{itemize}
+          \setlength\itemsep{-0.5mm}
+          \item Composed over 30 code samples with accompanying tutorials in Markdown, adhering to Python best practices to answer the most frequently asked programming questions
+          \item Coordinated remotely with teammates across the U.S. to review and verify code samples
+         \end{itemize}
+        
+    }
+
+
+    \expentry{Dec. 2018}
+    {Feb. 2019}
+    {UNICEF}
+    {Software Developer, Intern}
+    {
+        \begin{itemize}{\leftmargin=0.5em \itemindent=0em}
+          \setlength\itemsep{-0.5mm}
+          \item Implemented utilites to retrieve road networks for countries and compute distances between school and health facility coordinates extracted from large geospatial datasets 
+          \item Optimized algorithm performance to improve computation speed by hundreds of times across millions of geospatial points by researching and incorporating fast Python libraries
+          \item Demoed pipeline to team members and published \href{https://github.com/unicef/magicbox-download-roads}{road retrieval code} to UNICEF's official GitHub
+          \item Provisioned a \href{https://hub.docker.com/r/msradam/magicbox-tools}{Docker image} bundled with pipeline code and requisite libraries intended for Magicbox developers and data scientists
+        \end{itemize}
+        
+    }
+
+    \expentry{June 2018}
+    {August 2018}
+    {Kurani Architecture}
+    {Software Developer, Intern}
+    {\begin{itemize}
+          \setlength\itemsep{-0.5mm}
+          \item Integrated Raspberry Pi sensor data and scraped content from TedEd and Khan Academy for "Aristotle", a prototype learning feed for classrooms and smart devices
+          \item Collaborated with CEO on IoT implementation in learning spaces 
+        \end{itemize}
+    }
+
+    \expentry{Sept. 2017}
+    {Feb. 2019}
+    {Wesleyan Local Food Co-Op}
+    {Programmer, Volunteer}
+    {\begin{itemize}
+          \setlength\itemsep{0.1mm}
+          \item Implemented web and command-line utilities to retrieve Qualtrics survey data, compute share prices for participants, and output a spreadsheet for co-op coordinators to determine total shares and money owed per-person
+        \end{itemize}
+    }
+
+
+
+    \section{projects}
+
+        \projectentry{March 2020}
+        {HeatTweets: Geocoding Fire Incidents in NYC}
+        {Python, Twitter API, KeplerGl | \href{https://github.com/msradam/NYCFireData}{github.com/msradam/NYCFireData}}
+        {\begin{itemize}
+            \setlength\itemsep{-0.5mm}
+            \item Worked in a team to scrape, geocode, and map fire incidents from Twitter using Python and KeplerGl
+            \item Presented at NYC's Open Data Week Hackathon "Can Data Start a Movement?" at Queens College, NY
+        \end{itemize}
+        }
+
+        \projectentry{Sept. 2019}
+        {Wesleyan Theater DesignerBase}
+        {Flask, TypeForm, Google Sheets API | \href{https://github.com/msradam/wes-theater-designerbase}{github.com/msradam/wes-theater-designerbase}}
+        {\begin{itemize}
+            \setlength\itemsep{-0.5mm}
+            \item Developed a Flask web app for student theater organizations at Wesleyan University, intended for production teams to easily seek out designers and maintain a Google Sheets database
+            \item Integrated a TypeForm frontend with a Google Sheets backend to allow designers to register interest in design positions
+        \end{itemize}
+        }
+
+        \projectentry{August 2019}
+        {Carceral Contagion: Incarceration Simulation}
+        {Mesa, NetworkX, Python | \href{https://github.com/msradam/carceral-contagion}{github.com/msradam/carceral-contagion}}
+        {\begin{itemize}
+            \setlength\itemsep{-0.5mm}
+            \item Simulated an epidemiological model of U.S. mass incarceration based on historical data, illustrating racial disparities and the infectious nature of imprisonment
+            \item Modelled the population network with NetworkX graph data structures and implemented the frontend with the Mesa agent-based simulation library
+            \item Project prototype earned Social Good Award + 2nd Place Crowd Favorite at Wellesley Hacks, Nov. 2017
+        \end{itemize}
+        }
+
+        \projectentry{July 2019}
+        {Geospatial Routing API}
+        {Scikit-learn, Django, Docker, OpenAPI | \href{https://github.com/msradam/geospatial-routing-api}{github.com/msradam/geospatial-routing-api}}
+        {\begin{itemize}
+            \setlength\itemsep{-0.5mm}
+            \item Built upon my UNICEF internship project by implementing a geospatial distance calculation and road retrieval microservice with API endpoints to compute straight-line and routed distances between geographic coordinates and retrieve roads as graph data structures
+            \item Implemented Django backend and OpenAPI server as a frontend and documentation for API calls
+        \end{itemize}
+        }
+
+
+        \projectentry{June 2019}
+            {RESP: Responsive Emotional Support Protocols}
+            {Node.js, Express, React, MongoDB | \href{https://github.com/msradam/resp}{github.com/msradam/resp}}
+            {\begin{itemize}
+                \setlength\itemsep{-0.5mm}
+                \item Implemented Express backend and React frontend with Typeform webhooks to check-in natural disaster survivors, store them in a MongoDB database, and query the Healthsites.io API for nearby facilities
+                \item Winner of the IBM Call for Code Challenge at AngelHack Manhattan
+            \end{itemize}
+            }
+            
+    \section{technical skills}
+    \skillentry{languages}{Python, JavaScript (ES6+), Java, C, Bash, Markup: HTML5, CSS3, Markdown}
+    \skillentry{concepts}{RESTful API Design/Integration, MVC Architecture, Agile}
+    \skillentry{frameworks}{Docker, Kubernetes, Django, Flask, Express, React, Robot}
+    \skillentry{tools}{Git, GitHub, IBM Cloud, Ansible, Locust, Grafana k6}
+    \skillentry{data}{PostgreSQL, GraphQL, MongoDB, DB2}
+    \skillentry{testing}{Unit, Integration, Regression, End-to-End, Load/Stress}
+
+\end{document}
